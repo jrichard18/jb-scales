@@ -51,17 +51,46 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 2px 8px rgba(6, 182, 212, 0.35));
+      transition: transform 0.2s ease;
+    }
+    .brand:hover .brand-mark {
+      transform: scale(1.05);
+    }
+    .brand-logo-text {
+      display: flex;
+      flex-direction: column;
     }
     .brand-logo {
       font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 700;
+      font-size: 21px;
+      font-weight: 800;
       letter-spacing: -0.5px;
       color: #fff;
+      line-height: 1.1;
     }
-    .brand-logo span { color: var(--cyan); }
+    .brand-logo span { 
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .brand-sub {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
     .nav-links {
       display: flex;
       align-items: center;
@@ -993,7 +1022,31 @@
   <div class="container">
     <nav>
       <a href="#" class="brand">
-        <div class="brand-logo">JB <span>SCALES</span></div>
+        <div class="brand-mark">
+          <svg width="42" height="42" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="jbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#06b6d4"/>
+                <stop offset="100%" stop-color="#3b82f6"/>
+              </linearGradient>
+              <linearGradient id="jbGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#3b82f6"/>
+                <stop offset="100%" stop-color="#10b981"/>
+              </linearGradient>
+            </defs>
+            <rect width="48" height="48" rx="12" fill="#0f172a" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+            <!-- Stylized J -->
+            <path d="M16 14H22V28C22 30.5 20 32.5 17.5 32.5C15 32.5 14 31 14 31" stroke="url(#jbGrad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Interlocking Geometric B with Ascending Scale Bar -->
+            <path d="M26 14H32C34.5 14 36.5 15.8 36.5 18C36.5 20.2 34.5 22 32 22H26V14Z" fill="url(#jbGrad)" fill-opacity="0.2" stroke="url(#jbGrad)" stroke-width="3"/>
+            <path d="M26 22H33C35.5 22 37.5 24 37.5 26.5C37.5 29 35.5 31 33 31H26V22Z" fill="url(#jbGrad2)" fill-opacity="0.3" stroke="url(#jbGrad2)" stroke-width="3"/>
+            <path d="M26 14V32" stroke="url(#jbGrad)" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-logo-text">
+          <div class="brand-logo">JB <span>SCALES</span></div>
+          <div class="brand-sub">HVAC Client Acquisition</div>
+        </div>
       </a>
       <div class="nav-links">
         <a href="#what-we-do" class="nav-link">What We Do</a>
@@ -1513,8 +1566,20 @@
   </div>
 
   <footer>
-    <div class="container">
-      &copy; 2026 JB Scales Agency. Dedicated Customer Acquisition for Independent HVAC Contractors.
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="brand-mark" style="width: 32px; height: 32px;">
+          <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="12" fill="#0f172a" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+            <path d="M16 14H22V28C22 30.5 20 32.5 17.5 32.5C15 32.5 14 31 14 31" stroke="#06b6d4" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M26 14H32C34.5 14 36.5 15.8 36.5 18C36.5 20.2 34.5 22 32 22H26V14Z" fill="#06b6d4" fill-opacity="0.2" stroke="#06b6d4" stroke-width="3"/>
+            <path d="M26 22H33C35.5 22 37.5 24 37.5 26.5C37.5 29 35.5 31 33 31H26V22Z" fill="#10b981" fill-opacity="0.3" stroke="#10b981" stroke-width="3"/>
+            <path d="M26 14V32" stroke="#06b6d4" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-logo" style="font-size: 18px;">JB <span>SCALES</span></div>
+      </div>
+      <div>&copy; 2026 JB Scales Agency. Dedicated Customer Acquisition for Independent HVAC Contractors.</div>
     </div>
   </footer>
 
