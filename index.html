@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JB Scales | Exclusive Client Acquisition for HVAC Contractors</title>
-  <meta name="description" content="Deploy a dedicated, hyper-local Meta ad engine that delivers exclusive homeowner HVAC replacement and repair appointments directly to your dispatch team.">
+  <meta name="description" content="Deploy a dedicated, hyper-local Meta ad engine delivering exclusive homeowner HVAC replacement and repair appointments directly to your dispatch calendar.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
@@ -92,7 +92,7 @@
 
     /* Hero */
     .hero {
-      padding: 90px 0 70px;
+      padding: 80px 0 60px;
       text-align: center;
       position: relative;
     }
@@ -157,6 +157,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      cursor: pointer;
     }
     .btn-lg:hover {
       background: var(--blue-dark);
@@ -178,32 +179,42 @@
       background: var(--surface-elevated);
       border-color: #334155;
     }
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 24px;
+
+    /* Integration strip */
+    .integration-strip {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 70px;
+      flex-wrap: wrap;
+    }
+    .integration-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .badge-chip {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 14px;
-    }
-    .metric-val {
-      font-size: 26px;
-      font-weight: 800;
-      color: #fff;
-      font-family: var(--font-display);
-    }
-    .metric-val span { color: var(--cyan); }
-    .metric-lbl {
+      padding: 6px 14px;
+      border-radius: 6px;
       font-size: 13px;
-      color: var(--text-muted);
+      font-weight: 600;
+      color: #cbd5e1;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
     /* Section Titles */
     .section-wrap {
-      padding: 90px 0;
+      padding: 80px 0;
       border-top: 1px solid var(--border);
     }
     .section-header {
@@ -282,7 +293,148 @@
       flex-shrink: 0;
     }
 
-    /* Interactive ROI Calculator */
+    /* Shoulder Season Special */
+    .shoulder-banner {
+      background: linear-gradient(135deg, #101a2e 0%, #0d121f 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+    .shoulder-badge {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--amber);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .shoulder-banner h3 {
+      font-family: var(--font-display);
+      font-size: 26px;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .shoulder-banner p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .shoulder-stats {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .shoulder-stat-num {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--cyan);
+    }
+    .shoulder-stat-lbl {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Live Ad Preview Component */
+    .ad-preview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+      margin-top: 40px;
+    }
+    .ad-phone-mockup {
+      background: #000;
+      border: 3px solid #334155;
+      border-radius: 24px;
+      padding: 16px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .ad-card-inner {
+      background: #18191a;
+      border-radius: 12px;
+      overflow: hidden;
+      color: #e4e6eb;
+      font-size: 13px;
+    }
+    .ad-header {
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .ad-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #fff;
+    }
+    .ad-author { font-weight: 700; color: #fff; }
+    .ad-sponsored { font-size: 11px; color: #b0b3b8; }
+    .ad-copy {
+      padding: 0 12px 10px;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .ad-image-mock {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-top: 1px solid #334155;
+      border-bottom: 1px solid #334155;
+      text-align: center;
+      padding: 16px;
+    }
+    .ad-hook-text {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .ad-sub-text {
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+    .ad-footer {
+      padding: 12px;
+      background: #242526;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ad-cta-btn {
+      background: #2d88ff;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    /* ROI Calculator */
     .calc-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -408,7 +560,7 @@
       line-height: 1.6;
     }
 
-    /* Territory Availability Lock CTA */
+    /* Territory Availability Checker */
     .cta-banner {
       background: linear-gradient(180deg, #131d31 0%, #0a0f1c 100%);
       border: 1px solid var(--border-accent);
@@ -442,8 +594,27 @@
       font-size: 16px;
       color: var(--text-muted);
       max-width: 640px;
-      margin: 0 auto 36px;
+      margin: 0 auto 32px;
     }
+    .territory-form {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      max-width: 500px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+    .zip-input {
+      background: #090d16;
+      border: 1px solid #334155;
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 8px;
+      font-size: 15px;
+      width: 240px;
+      outline: none;
+    }
+    .zip-input:focus { border-color: var(--cyan); }
 
     footer {
       border-top: 1px solid var(--border);
@@ -452,13 +623,10 @@
       color: #64748b;
       font-size: 14px;
     }
-    footer a { color: var(--text-muted); text-decoration: none; }
-    footer a:hover { color: #fff; }
 
     @media (max-width: 860px) {
       h1 { font-size: 38px; }
-      .comp-grid, .arch-grid, .calc-card { grid-template-columns: 1fr; }
-      .hero-metrics { grid-template-columns: 1fr; }
+      .comp-grid, .arch-grid, .calc-card, .shoulder-banner, .ad-preview-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
   </style>
@@ -471,7 +639,8 @@
       </a>
       <div class="nav-links">
         <a href="#comparison" class="nav-link">Why Exclusive</a>
-        <a href="#system" class="nav-link">The 4-Step Engine</a>
+        <a href="#shoulder" class="nav-link">Shoulder Season</a>
+        <a href="#system" class="nav-link">4-Step Engine</a>
         <a href="#calculator" class="nav-link">ROI Calculator</a>
         <a href="#faq" class="nav-link">FAQ</a>
       </div>
@@ -495,19 +664,14 @@
       <a href="#calculator" class="btn-outline">Calculate Revenue Potential</a>
     </div>
 
-    <div class="hero-metrics">
-      <div>
-        <div class="metric-val">100%</div>
-        <div class="metric-lbl">Exclusive to Your Business (Zero Shared Calls)</div>
-      </div>
-      <div>
-        <div class="metric-val">60<span>s</span></div>
-        <div class="metric-lbl">Automated Speed-to-Lead Follow-Up</div>
-      </div>
-      <div>
-        <div class="metric-val">$8.5k<span>+</span></div>
-        <div class="metric-lbl">Average Full System Replacement Value</div>
-      </div>
+    <!-- Field CRM Integration Badges -->
+    <div class="integration-strip">
+      <span class="integration-label">Direct Dispatch Sync:</span>
+      <span class="badge-chip">&#9881; ServiceTitan</span>
+      <span class="badge-chip">&#9881; Jobber</span>
+      <span class="badge-chip">&#9881; Housecall Pro</span>
+      <span class="badge-chip">&#9881; FieldEdge</span>
+      <span class="badge-chip">&#9993; Direct SMS Dispatch</span>
     </div>
   </section>
 
@@ -517,7 +681,7 @@
       <div class="section-header">
         <div class="section-tag">Comparison</div>
         <h2 class="section-title">The Shared Lead Model Is Broken</h2>
-        <p class="section-desc">Why paying third-party lead aggregators burns your marketing budget and frustrates your techs.</p>
+        <p class="section-desc">Why paying third-party lead aggregators burns your marketing budget and leaves technicians sitting idle.</p>
       </div>
 
       <div class="comp-grid">
@@ -539,6 +703,68 @@
             <li><span class="icon-good">&#10003;</span> <span><strong>High-Ticket Changeouts:</strong> Designed to trigger profitable full-system replacements and lucrative tune-up upsells.</span></li>
             <li><span class="icon-good">&#10003;</span> <span><strong>Local Brand Authority:</strong> Your company name, logo, and reviews are placed front-and-center across Facebook & Instagram.</span></li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shoulder Season Solution -->
+  <section class="section-wrap" id="shoulder">
+    <div class="container">
+      <div class="shoulder-banner">
+        <div>
+          <div class="shoulder-badge">Shoulder Season Defense</div>
+          <h3>Never Let Your Technicians Sit Idle Between Peak Seasons</h3>
+          <p>When weather is mild in spring and fall, organic emergency calls vanish. Our <strong>Seasonal Tripwire Architecture</strong> shifts campaigns into preventative tune-up offers and zero-down replacement financing, ensuring steady truck revenue 12 months a year.</p>
+        </div>
+        <div class="shoulder-stats">
+          <div class="shoulder-stat-num">12 Mo.</div>
+          <div class="shoulder-stat-lbl">Consistent monthly pipeline volume without seasonal revenue cliffs.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ad Creative Preview Section -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Inside The Engine</div>
+        <h2 class="section-title">What High-Converting HVAC Ads Look Like</h2>
+        <p class="section-desc">Custom-branded campaigns that position your company as the premier heating and cooling authority.</p>
+      </div>
+
+      <div class="ad-preview-grid">
+        <div>
+          <h3 style="font-size: 24px; color: #fff; margin-bottom: 16px;">Targeting Single-Family Homes With Systems Over 10 Years Old</h3>
+          <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 16px;">We don't post generic contractor graphics. We use localized video and image hooks that speak directly to homeowner anxiety before emergency breakdowns occur.</p>
+          <ul class="comp-list">
+            <li><span class="icon-good">&#10003;</span> <span><strong>Pre-Populated Facebook Forms:</strong> Homeowners confirm contact details in 2 taps.</span></li>
+            <li><span class="icon-good">&#10003;</span> <span><strong>Filter Screening:</strong> Renters are instantly disqualified before reaching dispatch.</span></li>
+          </ul>
+        </div>
+
+        <div class="ad-phone-mockup">
+          <div class="ad-card-inner">
+            <div class="ad-header">
+              <div class="ad-avatar">HVAC</div>
+              <div>
+                <div class="ad-author">[Your Company Name]</div>
+                <div class="ad-sponsored">Sponsored &bull; Paid Partnership</div>
+              </div>
+            </div>
+            <div class="ad-copy">
+              Is your AC unit over 10 years old? Don't wait for the first 90-degree heatwave to find out it can't keep up. Claim your $59 Precision Safety Inspection today.
+            </div>
+            <div class="ad-image-mock">
+              <div class="ad-hook-text">$59 PRECISION TUNE-UP</div>
+              <div class="ad-sub-text">Exclusive to [Your Service Area] Homeowners</div>
+            </div>
+            <div class="ad-footer">
+              <span style="font-size: 11px; color: #94a3b8;">Limited Service Windows Available</span>
+              <a href="#" class="ad-cta-btn">Book Estimate</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -637,16 +863,17 @@
     </div>
   </section>
 
-  <!-- CTA Banner -->
+  <!-- Territory Availability Checker -->
   <div class="container section-wrap">
     <div class="cta-banner">
       <div class="cta-badge">Territory Exclusivity Rule</div>
       <h2>Lock In Your HVAC Service Territory</h2>
-      <p>We only take on one HVAC contractor per geographic market to prevent internal competition and ensure maximum lead flow for your technicians.</p>
-      <a href="mailto:josephksit@gmail.com?subject=HVAC%20Territory%20Availability%20Check" class="btn-lg">
-        Check Territory Availability
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <p>Enter your primary service zip code or county to verify availability. We only work with one contractor per zone.</p>
+      
+      <form class="territory-form" onsubmit="event.preventDefault(); window.location.href='mailto:josephksit@gmail.com?subject=Territory%20Availability%20Check%20for%20' + document.getElementById('zipInput').value;">
+        <input type="text" id="zipInput" class="zip-input" placeholder="Enter Zip Code or County" required>
+        <button type="submit" class="btn-lg">Check Exclusivity</button>
+      </form>
     </div>
   </div>
 
