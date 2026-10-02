@@ -84,6 +84,8 @@
       font-weight: 600;
       font-size: 14px;
       transition: all 0.2s;
+      cursor: pointer;
+      border: none;
     }
     .nav-cta:hover {
       background: var(--blue-dark);
@@ -327,55 +329,54 @@
       font-weight: 600;
     }
 
-    /* Shoulder Season Special */
-    .shoulder-banner {
-      background: linear-gradient(135deg, #101a2e 0%, #0d121f 100%);
-      border: 1px solid var(--border-accent);
-      border-radius: 16px;
-      padding: 40px;
+    /* Speed to Lead Section */
+    .speed-grid {
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 32px;
       align-items: center;
-      margin-bottom: 60px;
     }
-    .shoulder-badge {
-      display: inline-block;
-      background: rgba(245, 158, 11, 0.15);
-      border: 1px solid rgba(245, 158, 11, 0.3);
-      color: var(--amber);
-      font-size: 12px;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 999px;
-      margin-bottom: 12px;
-    }
-    .shoulder-banner h3 {
-      font-family: var(--font-display);
-      font-size: 26px;
-      color: #fff;
-      margin-bottom: 12px;
-    }
-    .shoulder-banner p {
-      font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-    .shoulder-stats {
+    .speed-stat-box {
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 36px;
+      text-align: center;
     }
-    .shoulder-stat-num {
+    .speed-stat-big {
       font-family: var(--font-display);
-      font-size: 36px;
-      font-weight: 800;
+      font-size: 64px;
+      font-weight: 900;
       color: var(--cyan);
+      line-height: 1;
+      margin-bottom: 8px;
     }
-    .shoulder-stat-lbl {
-      font-size: 13px;
-      color: var(--text-muted);
+    .speed-stat-sub {
+      font-size: 15px;
+      color: #cbd5e1;
+      font-weight: 600;
+    }
+    .speed-steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .speed-step-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .speed-time-badge {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      color: var(--cyan);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      letter-spacing: 0.5px;
     }
 
     /* 5-Point Quality Verification */
@@ -492,7 +493,7 @@
       margin-bottom: 24px;
     }
 
-    /* 72-Hour Onboarding Timeline */
+    /* 72-Hour Rapid Onboarding Timeline */
     .timeline-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -523,6 +524,57 @@
       font-size: 14px;
       color: var(--text-muted);
       line-height: 1.5;
+    }
+
+    /* Shoulder Season Special */
+    .shoulder-banner {
+      background: linear-gradient(135deg, #101a2e 0%, #0d121f 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+    .shoulder-badge {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--amber);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .shoulder-banner h3 {
+      font-family: var(--font-display);
+      font-size: 26px;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .shoulder-banner p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .shoulder-stats {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .shoulder-stat-num {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--cyan);
+    }
+    .shoulder-stat-lbl {
+      font-size: 13px;
+      color: var(--text-muted);
     }
 
     /* Live Ad Preview Component */
@@ -777,25 +829,71 @@
       max-width: 640px;
       margin: 0 auto 32px;
     }
-    .territory-form {
-      display: flex;
+
+    /* Intake Modal */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(4, 7, 14, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
       justify-content: center;
-      gap: 12px;
-      max-width: 500px;
-      margin: 0 auto;
-      flex-wrap: wrap;
+      align-items: center;
+      padding: 20px;
     }
-    .zip-input {
-      background: #090d16;
+    .modal-box {
+      background: #0f172a;
+      border: 1px solid var(--cyan);
+      border-radius: 18px;
+      max-width: 500px;
+      width: 100%;
+      padding: 36px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 18px; right: 20px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .modal-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .intake-group {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    .intake-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 6px;
+    }
+    .intake-input {
+      width: 100%;
+      background: #070a12;
       border: 1px solid #334155;
       color: #fff;
-      padding: 14px 18px;
+      padding: 12px 14px;
       border-radius: 8px;
-      font-size: 15px;
-      width: 240px;
+      font-size: 14px;
       outline: none;
     }
-    .zip-input:focus { border-color: var(--cyan); }
+    .intake-input:focus { border-color: var(--cyan); }
 
     footer {
       border-top: 1px solid var(--border);
@@ -807,7 +905,7 @@
 
     @media (max-width: 860px) {
       h1 { font-size: 38px; }
-      .comp-grid, .arch-grid, .calc-card, .shoulder-banner, .ad-preview-grid, .pilot-grid, .quality-grid, .timeline-grid { grid-template-columns: 1fr; }
+      .comp-grid, .arch-grid, .calc-card, .shoulder-banner, .ad-preview-grid, .pilot-grid, .quality-grid, .timeline-grid, .speed-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
   </style>
@@ -820,12 +918,13 @@
       </a>
       <div class="nav-links">
         <a href="#comparison" class="nav-link">Why Exclusive</a>
+        <a href="#speed" class="nav-link">Speed-to-Lead</a>
         <a href="#pilot" class="nav-link">15-Estimate Pilot</a>
         <a href="#timeline" class="nav-link">72h Launch</a>
         <a href="#quality" class="nav-link">Quality Standards</a>
         <a href="#calculator" class="nav-link">ROI Calculator</a>
       </div>
-      <a href="mailto:josephksit@gmail.com?subject=Territory%20Exclusivity%20Check" class="nav-cta">Check Territory Availability</a>
+      <button onclick="openModal()" class="nav-cta">Check Territory Availability</button>
     </nav>
   </div>
 
@@ -838,10 +937,10 @@
     <p class="hero-lead">We deploy hyper-local Meta ad engines that deliver 100% exclusive homeowner AC replacement & repair estimates directly to your dispatch calendar—with zero competition from Angi or HomeAdvisor.</p>
     
     <div class="hero-actions">
-      <a href="#pilot" class="btn-lg">
+      <button onclick="openModal()" class="btn-lg">
         Claim 15-Estimate Pilot
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      </button>
       <a href="#calculator" class="btn-outline">Calculate Revenue Potential</a>
     </div>
 
@@ -923,6 +1022,43 @@
     </div>
   </section>
 
+  <!-- Speed-to-Lead Section -->
+  <section class="section-wrap" id="speed">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Speed-To-Lead Infrastructure</div>
+        <h2 class="section-title">Why 89% of HVAC Contractors Lose Jobs Before Technicians Dial</h2>
+        <p class="section-desc">According to industry benchmarks, responding to a homeowner lead within 5 minutes increases conversion by 21x.</p>
+      </div>
+
+      <div class="speed-grid">
+        <div class="speed-stat-box">
+          <div class="speed-stat-big">21X</div>
+          <div class="speed-stat-sub">Higher appointment booking rate when responding within 5 minutes vs 30 minutes.</div>
+          <p style="font-size: 13px; color: var(--text-muted); margin-top: 14px;">Source: MIT Lead Response Management Study & Home Services Benchmarks.</p>
+        </div>
+
+        <div>
+          <h3 style="font-size: 22px; color: #fff; margin-bottom: 16px;">Our 60-Second Dispatch Protocol:</h3>
+          <ul class="speed-steps">
+            <li class="speed-step-item">
+              <span class="speed-time-badge">0-15s</span>
+              <p style="font-size: 14px; color: var(--text-muted);"><strong style="color: #fff;">Automated Homeowner Confirmation:</strong> Homeowner receives an immediate SMS verifying their heating/cooling problem and appointment window.</p>
+            </li>
+            <li class="speed-step-item">
+              <span class="speed-time-badge">30s</span>
+              <p style="font-size: 14px; color: var(--text-muted);"><strong style="color: #fff;">Instant Dispatcher Audio Alert:</strong> Your office gets an instant SMS/email notification with homeowner address, system age, and phone number.</p>
+            </li>
+            <li class="speed-step-item">
+              <span class="speed-time-badge">60s</span>
+              <p style="font-size: 14px; color: var(--text-muted);"><strong style="color: #fff;">Live Calendar Booking:</strong> Lead is logged directly into ServiceTitan, Jobber, Housecall Pro, or your dispatch board ready to run.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 5-Point Quality Verification Standard -->
   <section class="section-wrap" id="quality">
     <div class="container">
@@ -993,9 +1129,9 @@
             </div>
             <div class="pilot-highlight">15 Estimates</div>
             <div class="pilot-terms">One closed replacement ($8,500+) typically covers the entire pilot several times over.</div>
-            <a href="mailto:josephksit@gmail.com?subject=Claim%2015-Estimate%20Pilot" class="btn-lg" style="width: 100%; justify-content: center;">
+            <button onclick="openModal()" class="btn-lg" style="width: 100%; justify-content: center;">
               Claim Your Territory Pilot
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -1159,9 +1295,43 @@
       <h2>Lock In Your HVAC Service Territory</h2>
       <p>Enter your primary service zip code or county to verify availability. We only work with one contractor per zone.</p>
       
-      <form class="territory-form" onsubmit="event.preventDefault(); window.location.href='mailto:josephksit@gmail.com?subject=Territory%20Availability%20Check%20for%20' + document.getElementById('zipInput').value;">
-        <input type="text" id="zipInput" class="zip-input" placeholder="Enter Zip Code or County" required>
-        <button type="submit" class="btn-lg">Check Exclusivity</button>
+      <button onclick="openModal()" class="btn-lg">Check Territory Exclusivity</button>
+    </div>
+  </div>
+
+  <!-- Intake Modal -->
+  <div class="modal-backdrop" id="intakeModal" onclick="if(event.target === this) closeModal()">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div class="modal-title">Claim Your Territory</div>
+      <div class="modal-desc">Check if your service zip code is still open and reserve your 15-estimate pilot.</div>
+
+      <form onsubmit="handleIntake(event)">
+        <div class="intake-group">
+          <label>Company Name</label>
+          <input type="text" id="mCompany" class="intake-input" placeholder="e.g. Apex Heating & Air" required>
+        </div>
+        <div class="intake-group">
+          <label>Target Service Zip Codes or County</label>
+          <input type="text" id="mTerritory" class="intake-input" placeholder="e.g. Marion County, 46032, 46038" required>
+        </div>
+        <div class="intake-group">
+          <label>Current Number of Service Trucks</label>
+          <select id="mTrucks" class="intake-input" style="cursor: pointer;">
+            <option value="1-3">1 to 3 Trucks</option>
+            <option value="4-7">4 to 7 Trucks</option>
+            <option value="8-15">8 to 15 Trucks</option>
+            <option value="15+">15+ Trucks</option>
+          </select>
+        </div>
+        <div class="intake-group">
+          <label>Best Phone Number for Dispatch Alerts</label>
+          <input type="tel" id="mPhone" class="intake-input" placeholder="(317) 000-0000" required>
+        </div>
+
+        <button type="submit" class="btn-lg" style="width: 100%; justify-content: center; margin-top: 10px;">
+          Submit Territory Application
+        </button>
       </form>
     </div>
   </div>
@@ -1198,6 +1368,28 @@
     closeSlider.addEventListener('input', updateCalc);
     ticketSlider.addEventListener('input', updateCalc);
     updateCalc();
+
+    function openModal() {
+      document.getElementById('intakeModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('intakeModal').style.display = 'none';
+    }
+
+    function handleIntake(e) {
+      e.preventDefault();
+      const comp = document.getElementById('mCompany').value;
+      const terr = document.getElementById('mTerritory').value;
+      const trucks = document.getElementById('mTrucks').value;
+      const phone = document.getElementById('mPhone').value;
+
+      const subject = encodeURIComponent(`Territory Pilot Application: ${comp} (${terr})`);
+      const body = encodeURIComponent(`Company: ${comp}\nTerritory / Zips: ${terr}\nTrucks: ${trucks}\nPhone: ${phone}\n\nRequesting territory availability and 15-estimate pilot details.`);
+      
+      window.location.href = `mailto:josephksit@gmail.com?subject=${subject}&body=${body}`;
+      closeModal();
+    }
   </script>
 </body>
 </html>
