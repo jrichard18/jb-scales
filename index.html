@@ -344,6 +344,90 @@
       color: var(--text-muted);
     }
 
+    /* Dedicated 15-Estimate Pilot Program Box */
+    .pilot-wrap {
+      background: linear-gradient(180deg, #131d33 0%, #0a0f1c 100%);
+      border: 2px solid var(--cyan);
+      border-radius: 20px;
+      padding: 48px;
+      box-shadow: 0 10px 40px rgba(6, 182, 212, 0.15);
+      position: relative;
+    }
+    .pilot-tag {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--cyan);
+      color: #070a12;
+      font-weight: 800;
+      font-size: 12px;
+      padding: 6px 18px;
+      border-radius: 999px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .pilot-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .pilot-details h3 {
+      font-family: var(--font-display);
+      font-size: 30px;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .pilot-details p {
+      color: var(--text-muted);
+      font-size: 16px;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .pilot-deliverables {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .pilot-deliverables li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      color: #cbd5e1;
+    }
+    .pilot-deliverables li strong { color: #fff; }
+    .pilot-card-right {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      text-align: center;
+    }
+    .pilot-guarantee-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--emerald);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+    .pilot-highlight {
+      font-family: var(--font-display);
+      font-size: 38px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .pilot-terms {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
     /* Live Ad Preview Component */
     .ad-preview-grid {
       display: grid;
@@ -626,7 +710,7 @@
 
     @media (max-width: 860px) {
       h1 { font-size: 38px; }
-      .comp-grid, .arch-grid, .calc-card, .shoulder-banner, .ad-preview-grid { grid-template-columns: 1fr; }
+      .comp-grid, .arch-grid, .calc-card, .shoulder-banner, .ad-preview-grid, .pilot-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
   </style>
@@ -639,10 +723,10 @@
       </a>
       <div class="nav-links">
         <a href="#comparison" class="nav-link">Why Exclusive</a>
+        <a href="#pilot" class="nav-link">15-Estimate Pilot</a>
         <a href="#shoulder" class="nav-link">Shoulder Season</a>
         <a href="#system" class="nav-link">4-Step Engine</a>
         <a href="#calculator" class="nav-link">ROI Calculator</a>
-        <a href="#faq" class="nav-link">FAQ</a>
       </div>
       <a href="mailto:josephksit@gmail.com?subject=Territory%20Exclusivity%20Check" class="nav-cta">Check Territory Availability</a>
     </nav>
@@ -657,7 +741,7 @@
     <p class="hero-lead">We deploy hyper-local Meta ad engines that deliver 100% exclusive homeowner AC replacement & repair estimates directly to your dispatch calendar—with zero competition from Angi or HomeAdvisor.</p>
     
     <div class="hero-actions">
-      <a href="mailto:josephksit@gmail.com?subject=HVAC%20Pilot%20Request" class="btn-lg">
+      <a href="#pilot" class="btn-lg">
         Claim 15-Estimate Pilot
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -703,6 +787,46 @@
             <li><span class="icon-good">&#10003;</span> <span><strong>High-Ticket Changeouts:</strong> Designed to trigger profitable full-system replacements and lucrative tune-up upsells.</span></li>
             <li><span class="icon-good">&#10003;</span> <span><strong>Local Brand Authority:</strong> Your company name, logo, and reviews are placed front-and-center across Facebook & Instagram.</span></li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Dedicated 15-Estimate Pilot Program -->
+  <section class="section-wrap" id="pilot">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">The Introductory Partnership</div>
+        <h2 class="section-title">The 15-Estimate Growth Pilot</h2>
+        <p class="section-desc">Test our exclusive homeowner acquisition engine in your service territory with zero long-term contract lock-in.</p>
+      </div>
+
+      <div class="pilot-wrap">
+        <div class="pilot-tag">No Long-Term Lock-In &bull; Month-to-Month</div>
+        <div class="pilot-grid">
+          <div class="pilot-details">
+            <h3>Test Drive 15 Exclusive Homeowner Quotes</h3>
+            <p>We build your custom-branded hyper-local Meta ad funnels, set up speed-to-lead automation, and connect directly to your dispatch team. We do not stop until you receive 15 fully qualified, exclusive homeowner estimates.</p>
+            
+            <ul class="pilot-deliverables">
+              <li><span class="icon-good">&#10003;</span> <strong>15 Exclusive Homeowner Estimates</strong> routed straight to dispatch.</li>
+              <li><span class="icon-good">&#10003;</span> <strong>Complete Territory Lock:</strong> Your competitors are barred from partnering with us in your territory.</li>
+              <li><span class="icon-good">&#10003;</span> <strong>Custom Local Ad Creative:</strong> High-margin replacement and seasonal tripwire ads built for your brand.</li>
+              <li><span class="icon-good">&#10003;</span> <strong>Real-Time SMS & CRM Routing:</strong> Works with ServiceTitan, Jobber, Housecall Pro, or direct text alerts.</li>
+            </ul>
+          </div>
+
+          <div class="pilot-card-right">
+            <div class="pilot-guarantee-badge">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              Zero Long-Term Contract
+            </div>
+            <div class="pilot-highlight">15 Estimates</div>
+            <div class="pilot-terms">One closed replacement ($8,500+) typically covers the entire pilot several times over.</div>
+            <a href="mailto:josephksit@gmail.com?subject=Claim%2015-Estimate%20Pilot" class="btn-lg" style="width: 100%; justify-content: center;">
+              Claim Your Territory Pilot
+            </a>
+          </div>
         </div>
       </div>
     </div>
