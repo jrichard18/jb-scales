@@ -3,336 +3,685 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JB Scales | Exclusive HVAC Customer Acquisition & Lead Engine</title>
+  <title>JB Scales | Exclusive Client Acquisition for HVAC Contractors</title>
+  <meta name="description" content="Deploy a dedicated, hyper-local Meta ad engine that delivers exclusive homeowner HVAC replacement and repair appointments directly to your dispatch team.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #090d16;
-      --card-bg: #111827;
-      --card-border: #1f293d;
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
-      --accent-blue: #2563eb;
-      --accent-cyan: #06b6d4;
-      --accent-glow: rgba(37, 99, 235, 0.15);
-      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --bg: #070a12;
+      --surface: #0e1424;
+      --surface-elevated: #151d33;
+      --border: #1e293b;
+      --border-accent: rgba(37, 99, 235, 0.4);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --blue: #3b82f6;
+      --blue-dark: #1d4ed8;
+      --cyan: #06b6d4;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'Space Grotesk', sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       background-color: var(--bg);
-      color: var(--text-main);
-      font-family: var(--font-stack);
+      color: var(--text);
+      font-family: var(--font);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
     .container {
-      max-width: 1120px;
+      max-width: 1160px;
       margin: 0 auto;
       padding: 0 24px;
     }
+    
+    /* Navigation */
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--card-border);
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
     }
-    .logo {
-      font-size: 20px;
-      font-weight: 800;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .brand-logo {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
       letter-spacing: -0.5px;
       color: #fff;
     }
-    .logo span { color: var(--accent-cyan); }
+    .brand-logo span { color: var(--cyan); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: #fff; }
     .nav-cta {
-      background: var(--accent-blue);
+      background: var(--blue);
       color: #fff;
-      padding: 10px 18px;
+      padding: 10px 20px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
       font-size: 14px;
-      transition: background 0.2s;
+      transition: all 0.2s;
     }
-    .nav-cta:hover { background: #1d4ed8; }
+    .nav-cta:hover {
+      background: var(--blue-dark);
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    }
 
     /* Hero */
     .hero {
-      padding: 80px 0 60px;
+      padding: 90px 0 70px;
       text-align: center;
+      position: relative;
     }
-    .badge {
-      display: inline-block;
-      background: rgba(6, 182, 212, 0.1);
-      color: var(--accent-cyan);
-      border: 1px solid rgba(6, 182, 212, 0.2);
-      padding: 6px 14px;
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(6, 182, 212, 0.08);
+      border: 1px solid rgba(6, 182, 212, 0.25);
+      color: var(--cyan);
+      padding: 6px 16px;
       border-radius: 999px;
       font-size: 13px;
       font-weight: 600;
+      letter-spacing: 0.3px;
       margin-bottom: 24px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
+    }
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 8px var(--emerald);
     }
     h1 {
-      font-size: 48px;
-      font-weight: 800;
+      font-family: var(--font-display);
+      font-size: 52px;
+      font-weight: 700;
       line-height: 1.15;
-      letter-spacing: -1px;
-      margin-bottom: 20px;
+      letter-spacing: -1.2px;
+      margin-bottom: 22px;
       color: #fff;
     }
     h1 span {
-      background: linear-gradient(135deg, #fff 40%, var(--accent-cyan));
+      background: linear-gradient(135deg, #ffffff 40%, var(--cyan) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .hero-sub {
-      font-size: 18px;
+    .hero-lead {
+      font-size: 19px;
       color: var(--text-muted);
-      max-width: 680px;
-      margin: 0 auto 36px;
+      max-width: 720px;
+      margin: 0 auto 38px;
     }
-    .hero-buttons {
+    .hero-actions {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 16px;
+      margin-bottom: 40px;
     }
-    .btn-primary {
-      background: var(--accent-blue);
+    .btn-lg {
+      background: var(--blue);
       color: #fff;
-      padding: 14px 28px;
-      border-radius: 8px;
+      padding: 15px 32px;
+      border-radius: 10px;
       font-size: 16px;
       font-weight: 700;
       text-decoration: none;
       transition: all 0.2s;
       border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
-    .btn-primary:hover {
-      background: #1d4ed8;
-      box-shadow: 0 4px 20px var(--accent-glow);
+    .btn-lg:hover {
+      background: var(--blue-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
     }
-    .btn-secondary {
-      background: #1f293d;
-      color: var(--text-main);
-      padding: 14px 28px;
-      border-radius: 8px;
+    .btn-outline {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 15px 28px;
+      border-radius: 10px;
       font-size: 16px;
       font-weight: 600;
       text-decoration: none;
-      border: 1px solid var(--card-border);
+      transition: all 0.2s;
     }
-    .btn-secondary:hover { background: #27354f; }
+    .btn-outline:hover {
+      background: var(--surface-elevated);
+      border-color: #334155;
+    }
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .metric-val {
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      font-family: var(--font-display);
+    }
+    .metric-val span { color: var(--cyan); }
+    .metric-lbl {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
 
-    /* Problem vs Solution */
-    .section-title {
-      font-size: 32px;
-      font-weight: 700;
+    /* Section Titles */
+    .section-wrap {
+      padding: 90px 0;
+      border-top: 1px solid var(--border);
+    }
+    .section-header {
       text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-tag {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
       margin-bottom: 12px;
     }
-    .section-subtitle {
-      text-align: center;
-      color: var(--text-muted);
-      margin-bottom: 48px;
+    .section-desc {
       font-size: 16px;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto;
     }
-    .comparison-grid {
+
+    /* Comparison Grid */
+    .comp-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-bottom: 80px;
+      gap: 28px;
     }
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 32px;
+    .comp-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 36px;
     }
-    .card-bad { border-top: 4px solid #ef4444; }
-    .card-good { border-top: 4px solid #10b981; }
-    .card h3 {
+    .comp-card.bad { border-top: 4px solid #ef4444; }
+    .comp-card.good {
+      border-top: 4px solid var(--emerald);
+      background: linear-gradient(180deg, #101a2e 0%, var(--surface) 100%);
+    }
+    .comp-card h3 {
       font-size: 20px;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      font-weight: 700;
+      margin-bottom: 20px;
     }
-    .card ul {
+    .comp-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      color: var(--text-muted);
-      font-size: 15px;
+      gap: 14px;
     }
-    .card ul li {
+    .comp-list li {
       display: flex;
       align-items: flex-start;
-      gap: 8px;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--text-muted);
     }
-    .card-bad ul li::before { content: "✕"; color: #ef4444; font-weight: bold; }
-    .card-good ul li::before { content: "✓"; color: #10b981; font-weight: bold; }
+    .comp-list li strong { color: #fff; }
+    .icon-bad {
+      color: #ef4444;
+      font-weight: 900;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .icon-good {
+      color: var(--emerald);
+      font-weight: 900;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
 
-    /* The 4-Step System */
-    .steps-section {
-      background: #0d121f;
-      border-top: 1px solid var(--card-border);
-      border-bottom: 1px solid var(--card-border);
-      padding: 80px 0;
-      margin-bottom: 80px;
+    /* Interactive ROI Calculator */
+    .calc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
     }
-    .steps-grid {
+    .calc-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .calc-row label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+    }
+    .calc-row span.val-display {
+      color: var(--cyan);
+      font-weight: 700;
+      margin-left: 6px;
+    }
+    .calc-slider {
+      width: 100%;
+      height: 6px;
+      background: #1e293b;
+      border-radius: 6px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--cyan);
+      cursor: pointer;
+      box-shadow: 0 0 10px var(--cyan);
+    }
+    .calc-result-box {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-accent);
+      border-radius: 14px;
+      padding: 32px;
+      text-align: center;
+    }
+    .calc-rev-val {
+      font-family: var(--font-display);
+      font-size: 44px;
+      font-weight: 800;
+      color: var(--emerald);
+      margin: 12px 0 6px;
+    }
+    .calc-subnote {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* 4-Step Architecture */
+    .arch-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
-    .step-box {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 10px;
-      padding: 24px;
+    .arch-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
       position: relative;
+      transition: transform 0.2s, border-color 0.2s;
     }
-    .step-num {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--accent-cyan);
+    .arch-card:hover {
+      transform: translateY(-4px);
+      border-color: #334155;
+    }
+    .arch-step-num {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--cyan);
+      letter-spacing: 1px;
       text-transform: uppercase;
       margin-bottom: 12px;
     }
-    .step-box h4 {
-      font-size: 17px;
-      margin-bottom: 10px;
+    .arch-card h4 {
+      font-size: 18px;
       color: #fff;
+      margin-bottom: 10px;
     }
-    .step-box p {
+    .arch-card p {
       font-size: 14px;
       color: var(--text-muted);
       line-height: 1.5;
     }
 
-    /* CTA Section */
-    .cta-box {
-      background: linear-gradient(180deg, #131d31 0%, #0d1424 100%);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
+    /* FAQ Section */
+    .faq-grid {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 28px;
+    }
+    .faq-item h4 {
+      font-size: 17px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .faq-item p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Territory Availability Lock CTA */
+    .cta-banner {
+      background: linear-gradient(180deg, #131d31 0%, #0a0f1c 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: 20px;
       padding: 60px 40px;
       text-align: center;
-      margin-bottom: 80px;
+      position: relative;
+      overflow: hidden;
     }
-    .cta-box h2 {
-      font-size: 36px;
+    .cta-badge {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--amber);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: 38px;
+      color: #fff;
       margin-bottom: 16px;
+      letter-spacing: -0.5px;
     }
-    .cta-box p {
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto 32px;
+    .cta-banner p {
       font-size: 16px;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 36px;
     }
 
     footer {
-      border-top: 1px solid var(--card-border);
-      padding: 32px 0;
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
       text-align: center;
-      color: #6b7280;
+      color: #64748b;
       font-size: 14px;
     }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: #fff; }
 
-    @media (max-width: 768px) {
-      h1 { font-size: 34px; }
-      .comparison-grid, .steps-grid { grid-template-columns: 1fr; }
-      .hero { padding: 48px 0; }
+    @media (max-width: 860px) {
+      h1 { font-size: 38px; }
+      .comp-grid, .arch-grid, .calc-card { grid-template-columns: 1fr; }
+      .hero-metrics { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <nav>
-      <div class="logo">JB <span>SCALES</span></div>
-      <a href="mailto:josephksit@gmail.com?subject=HVAC%20Pilot%20Inquiry" class="nav-cta">Claim Your Service Area</a>
+      <a href="#" class="brand">
+        <div class="brand-logo">JB <span>SCALES</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="#comparison" class="nav-link">Why Exclusive</a>
+        <a href="#system" class="nav-link">The 4-Step Engine</a>
+        <a href="#calculator" class="nav-link">ROI Calculator</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </div>
+      <a href="mailto:josephksit@gmail.com?subject=Territory%20Exclusivity%20Check" class="nav-cta">Check Territory Availability</a>
     </nav>
   </div>
 
   <section class="hero container">
-    <div class="badge">Dedicated HVAC Growth Infrastructure</div>
-    <h1>Stop Paying for Shared Leads.<br><span>Fill Your Tech Schedules Exclusively.</span></h1>
-    <p class="hero-sub">We deploy dedicated, hyper-local Meta ad engines that deliver 100% exclusive homeowner AC replacement & repair estimates directly to your dispatch team.</p>
-    <div class="hero-buttons">
-      <a href="mailto:josephksit@gmail.com?subject=HVAC%20Pilot%20Inquiry" class="btn-primary">Request 15-Estimate Pilot</a>
-      <a href="#system" class="btn-secondary">How The Engine Works</a>
+    <div class="pill">
+      <div class="pill-dot"></div>
+      1 Exclusive Partner Allowed Per Service Area
+    </div>
+    <h1>Stop Buying Recycled Shared Leads.<br><span>Fill Your Tech Board Exclusively.</span></h1>
+    <p class="hero-lead">We deploy hyper-local Meta ad engines that deliver 100% exclusive homeowner AC replacement & repair estimates directly to your dispatch calendar—with zero competition from Angi or HomeAdvisor.</p>
+    
+    <div class="hero-actions">
+      <a href="mailto:josephksit@gmail.com?subject=HVAC%20Pilot%20Request" class="btn-lg">
+        Claim 15-Estimate Pilot
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#calculator" class="btn-outline">Calculate Revenue Potential</a>
+    </div>
+
+    <div class="hero-metrics">
+      <div>
+        <div class="metric-val">100%</div>
+        <div class="metric-lbl">Exclusive to Your Business (Zero Shared Calls)</div>
+      </div>
+      <div>
+        <div class="metric-val">60<span>s</span></div>
+        <div class="metric-lbl">Automated Speed-to-Lead Follow-Up</div>
+      </div>
+      <div>
+        <div class="metric-val">$8.5k<span>+</span></div>
+        <div class="metric-lbl">Average Full System Replacement Value</div>
+      </div>
     </div>
   </section>
 
-  <div class="container">
-    <h2 class="section-title">The Problem With Traditional HVAC Lead Gen</h2>
-    <p class="section-subtitle">Why Angi, HomeAdvisor, and generic lead brokers leave your technicians with empty hours.</p>
-
-    <div class="comparison-grid">
-      <div class="card card-bad">
-        <h3>Old Way: Shared Lead Brokers</h3>
-        <ul>
-          <li>Leads sold to 4 to 6 local contractors at the same time.</li>
-          <li>Renter and low-budget inquiries eating up dispatch time.</li>
-          <li>Expensive $120+ cost-per-lead with under 20% connect rates.</li>
-          <li>Race to the bottom on price with zero brand loyalty.</li>
-        </ul>
-      </div>
-      <div class="card card-good">
-        <h3>The JB Scales Engine</h3>
-        <ul>
-          <li><strong>100% Exclusive</strong>: Only your phone rings; zero shared competition.</li>
-          <li><strong>Pre-Qualified Homeowners</strong>: Filtered for single-family homes with 10+ year systems.</li>
-          <li><strong>High-Margin Focus</strong>: Engineered to drive full system changeouts and tune-up tripwires.</li>
-          <li><strong>60-Second Speed-to-Lead</strong>: Instant SMS alerts directly into your dispatch calendar.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <section class="steps-section" id="system">
+  <!-- Problem vs Solution -->
+  <section class="section-wrap" id="comparison">
     <div class="container">
-      <h2 class="section-title">The 4-Step Growth Architecture</h2>
-      <p class="section-subtitle">How we build and scale your residential HVAC pipeline.</p>
-      
-      <div class="steps-grid">
-        <div class="step-box">
-          <div class="step-num">Step 01</div>
-          <h4>Hyper-Local Geofencing</h4>
-          <p>We lock in a 15–25 mile radius around your shop, targeting single-family homeowners with equipment over a decade old.</p>
+      <div class="section-header">
+        <div class="section-tag">Comparison</div>
+        <h2 class="section-title">The Shared Lead Model Is Broken</h2>
+        <p class="section-desc">Why paying third-party lead aggregators burns your marketing budget and frustrates your techs.</p>
+      </div>
+
+      <div class="comp-grid">
+        <div class="comp-card bad">
+          <h3>The Shared Broker Trap (Angi / HomeAdvisor)</h3>
+          <ul class="comp-list">
+            <li><span class="icon-bad">&#10005;</span> <span><strong>Sold to 4-6 Competitors:</strong> You race other contractors to dial the homeowner first.</span></li>
+            <li><span class="icon-bad">&#10005;</span> <span><strong>Unqualified Inquiries:</strong> Renters, mobile homes, and tire-kickers slip through the cracks.</span></li>
+            <li><span class="icon-bad">&#10005;</span> <span><strong>Price-Shopper Culture:</strong> Homeowners are conditioned to pick the lowest bid.</span></li>
+            <li><span class="icon-bad">&#10005;</span> <span><strong>Zero Asset Ownership:</strong> You pay forever without building your own customer brand.</span></li>
+          </ul>
         </div>
-        <div class="step-box">
-          <div class="step-num">Step 02</div>
-          <h4>Seasonal Tripwire Offers</h4>
-          <p>We launch high-converting $59 tune-ups and $89/mo zero-down financing campaigns that trigger high-ticket replacements.</p>
-        </div>
-        <div class="step-box">
-          <div class="step-num">Step 03</div>
-          <h4>In-Ad Qualification</h4>
-          <p>Homeowners answer 3 filter questions on Facebook & Instagram before booking, eliminating renters and tire-kickers.</p>
-        </div>
-        <div class="step-box">
-          <div class="step-num">Step 04</div>
-          <h4>Dispatcher Handoff</h4>
-          <p>Instant SMS outreach verifies the appointment within 60 seconds and syncs directly to your technician service board.</p>
+
+        <div class="comp-card good">
+          <h3>The JB Scales Private Engine</h3>
+          <ul class="comp-list">
+            <li><span class="icon-good">&#10003;</span> <span><strong>100% Exclusive Leads:</strong> Inquiries go directly to your dispatch team and no one else.</span></li>
+            <li><span class="icon-good">&#10003;</span> <span><strong>3-Point Pre-Qualification:</strong> Filters for single-family homeowners with systems over 10 years old.</span></li>
+            <li><span class="icon-good">&#10003;</span> <span><strong>High-Ticket Changeouts:</strong> Designed to trigger profitable full-system replacements and lucrative tune-up upsells.</span></li>
+            <li><span class="icon-good">&#10003;</span> <span><strong>Local Brand Authority:</strong> Your company name, logo, and reviews are placed front-and-center across Facebook & Instagram.</span></li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="container">
-    <div class="cta-box">
-      <h2>Lock In Your Service Territory</h2>
-      <p>We only partner with one exclusive HVAC contractor per geographic territory to protect lead volume and maintain zero competition.</p>
-      <a href="mailto:josephksit@gmail.com?subject=HVAC%20Territory%20Check" class="btn-primary">Check Availability in Your Area</a>
+  <!-- Interactive ROI Calculator -->
+  <section class="section-wrap" id="calculator">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Revenue Estimator</div>
+        <h2 class="section-title">Calculate Your Monthly Pipeline Return</h2>
+        <p class="section-desc">See what a 15–25 exclusive estimate flow adds to your monthly HVAC revenue.</p>
+      </div>
+
+      <div class="calc-card">
+        <div class="calc-controls">
+          <div class="calc-row">
+            <label>Monthly Exclusive Homeowner Estimates: <span class="val-display" id="estVal">15</span></label>
+            <input type="range" min="10" max="40" value="15" class="calc-slider" id="estSlider">
+          </div>
+          <div class="calc-row">
+            <label>Quote-to-Close Rate: <span class="val-display" id="closeVal">35%</span></label>
+            <input type="range" min="20" max="60" value="35" step="5" class="calc-slider" id="closeSlider">
+          </div>
+          <div class="calc-row">
+            <label>Average Replacement / Job Value: <span class="val-display" id="ticketVal">$8,500</span></label>
+            <input type="range" min="5000" max="15000" value="8500" step="500" class="calc-slider" id="ticketSlider">
+          </div>
+        </div>
+
+        <div class="calc-result-box">
+          <div class="section-tag" style="color: #94a3b8;">Estimated Added Pipeline Revenue</div>
+          <div class="calc-rev-val" id="revVal">$44,625</div>
+          <div class="calc-subnote">Based on closed system replacements & high-margin repair work.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The 4-Step Architecture -->
+  <section class="section-wrap" id="system">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Proven Process</div>
+        <h2 class="section-title">The 4-Step Growth Architecture</h2>
+        <p class="section-desc">Engineered specifically for local HVAC operations with 3 to 15 service trucks.</p>
+      </div>
+
+      <div class="arch-grid">
+        <div class="arch-card">
+          <div class="arch-step-num">Step 01</div>
+          <h4>Hyper-Local Geofencing</h4>
+          <p>We lock down your exact high-margin service territory by zip code, targeting verified homeowners whose HVAC systems are 10+ years old.</p>
+        </div>
+        <div class="arch-card">
+          <div class="arch-step-num">Step 02</div>
+          <h4>Seasonal Tripwire Offers</h4>
+          <p>We deploy proven $59 safety tune-up and $89/mo financing angles that get technicians inside homes to uncover replacement needs.</p>
+        </div>
+        <div class="arch-card">
+          <div class="arch-step-num">Step 03</div>
+          <h4>In-Ad Qualification</h4>
+          <p>Homeowners complete a 3-question filter inside Facebook & Instagram, filtering out renters, low budgets, and tire-kickers.</p>
+        </div>
+        <div class="arch-card">
+          <div class="arch-step-num">Step 04</div>
+          <h4>60-Second Dispatch Handoff</h4>
+          <p>Our automated speed-to-lead engine texts the homeowner instantly to confirm details and alerts your dispatcher in real time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-wrap" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Frequently Asked Questions</div>
+        <h2 class="section-title">Common Contractor Questions</h2>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>Are these leads truly exclusive to my company?</h4>
+          <p>Yes. 100%. We do not operate a shared lead directory. Every campaign is launched specifically under your brand name, and every lead routes exclusively to your dispatch team.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Do we have to sign a long-term contract?</h4>
+          <p>No. We start every HVAC partner on a 15-estimate pilot. Once you see the quality of homeowner estimates and close your first system changeouts, we continue on a month-to-month agreement.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How fast can our campaign go live?</h4>
+          <p>Once we confirm your service radius and verify territory exclusivity, our team builds your ads, targeting geofences, and dispatch alerts within 3 to 5 business days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <div class="container section-wrap">
+    <div class="cta-banner">
+      <div class="cta-badge">Territory Exclusivity Rule</div>
+      <h2>Lock In Your HVAC Service Territory</h2>
+      <p>We only take on one HVAC contractor per geographic market to prevent internal competition and ensure maximum lead flow for your technicians.</p>
+      <a href="mailto:josephksit@gmail.com?subject=HVAC%20Territory%20Availability%20Check" class="btn-lg">
+        Check Territory Availability
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </div>
 
   <footer>
     <div class="container">
-      &copy; 2026 JB Scales Agency. All Rights Reserved. Specialized Growth Infrastructure for HVAC Contractors.
+      &copy; 2026 JB Scales Agency. Dedicated Customer Acquisition for Independent HVAC Contractors.
     </div>
   </footer>
+
+  <script>
+    const estSlider = document.getElementById('estSlider');
+    const closeSlider = document.getElementById('closeSlider');
+    const ticketSlider = document.getElementById('ticketSlider');
+    const estVal = document.getElementById('estVal');
+    const closeVal = document.getElementById('closeVal');
+    const ticketVal = document.getElementById('ticketVal');
+    const revVal = document.getElementById('revVal');
+
+    function updateCalc() {
+      const est = parseInt(estSlider.value);
+      const close = parseInt(closeSlider.value) / 100;
+      const ticket = parseInt(ticketSlider.value);
+
+      estVal.textContent = est;
+      closeVal.textContent = (close * 100) + '%';
+      ticketVal.textContent = '$' + ticket.toLocaleString();
+
+      const total = Math.round(est * close * ticket);
+      revVal.textContent = '$' + total.toLocaleString();
+    }
+
+    estSlider.addEventListener('input', updateCalc);
+    closeSlider.addEventListener('input', updateCalc);
+    ticketSlider.addEventListener('input', updateCalc);
+    updateCalc();
+  </script>
 </body>
 </html>
