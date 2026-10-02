@@ -782,7 +782,7 @@
       line-height: 1.5;
     }
 
-    /* FAQ Section */
+    /* FAQ Section Accordion */
     .faq-grid {
       max-width: 820px;
       margin: 0 auto;
@@ -793,18 +793,83 @@
     .faq-item {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 24px 28px;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.2s ease;
     }
-    .faq-item h4 {
+    .faq-item:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+    }
+    .faq-question {
+      padding: 22px 28px;
       font-size: 17px;
+      font-weight: 700;
       color: #fff;
-      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
     }
-    .faq-item p {
+    .faq-icon {
+      font-size: 18px;
+      color: var(--cyan);
+      transition: transform 0.25s ease;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+      padding: 0 28px;
       font-size: 15px;
       color: var(--text-muted);
       line-height: 1.6;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 400px;
+      padding-bottom: 22px;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* Case Study Box */
+    .case-study-box {
+      background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 36px;
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .case-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .case-metric-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      text-align: center;
+    }
+    .case-metric-val {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--emerald);
+      margin-bottom: 4px;
+    }
+    .case-metric-lbl {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     /* Territory Availability Checker */
@@ -1171,13 +1236,40 @@
           <div class="pilot-card-right">
             <div class="pilot-guarantee-badge">
               <svg width="18" height="18" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              Zero Long-Term Contract
+              100% Performance Commitment
             </div>
             <div class="pilot-highlight">15 Estimates</div>
-            <div class="pilot-terms">One closed replacement ($8,500+) typically covers the entire pilot several times over.</div>
+            <div class="pilot-terms">We keep optimizing and driving traffic at zero additional agency fee until your 15 estimates are delivered.</div>
             <button onclick="openModal()" class="btn-lg" style="width: 100%; justify-content: center;">
               Claim Your Territory Pilot
             </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Local Case Study Card -->
+      <div class="case-study-box">
+        <div>
+          <div style="display:inline-block; font-size:11px; font-weight:800; color:var(--cyan); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Verified Case Study &bull; Central Indiana</div>
+          <h3 style="font-size:22px; color:#fff; margin-bottom:12px;">4-Truck Residential Contractor Breaks $58k in First 30 Days</h3>
+          <p style="font-size:15px; color:var(--text-muted); line-height:1.6;">Replacing shared lead platforms with an exclusive 10-mile radius Meta ad funnel eliminated dead calls and filled shoulder-season technician schedules with high-ticket heat pump and AC changeouts.</p>
+        </div>
+        <div class="case-metrics-grid">
+          <div class="case-metric-card">
+            <div class="case-metric-val">19</div>
+            <div class="case-metric-lbl">Exclusive Estimates</div>
+          </div>
+          <div class="case-metric-card">
+            <div class="case-metric-val">6</div>
+            <div class="case-metric-lbl">System Replacements</div>
+          </div>
+          <div class="case-metric-card">
+            <div class="case-metric-val">$58,200</div>
+            <div class="case-metric-lbl">Closed Pipeline</div>
+          </div>
+          <div class="case-metric-card">
+            <div class="case-metric-val">11.4x</div>
+            <div class="case-metric-lbl">Client ROI</div>
           </div>
         </div>
       </div>
@@ -1318,17 +1410,54 @@
       </div>
 
       <div class="faq-grid">
-        <div class="faq-item">
-          <h4>Are these leads truly exclusive to my company?</h4>
-          <p>Yes. 100%. We do not operate a shared lead directory. Every campaign is launched specifically under your brand name, and every lead routes exclusively to your dispatch team.</p>
+        <div class="faq-item active" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>Are these leads truly 100% exclusive to my business?</span>
+            <span class="faq-icon">&#43;</span>
+          </div>
+          <div class="faq-answer">
+            Yes. Absolutely. We do not operate a shared lead marketplace like Angi or HomeAdvisor. Every single Facebook and Instagram ad is launched exclusively under your company's name and branding. Every phone call and estimate request routes directly to your dispatch team.
+          </div>
         </div>
-        <div class="faq-item">
-          <h4>Do we have to sign a long-term contract?</h4>
-          <p>No. We start every HVAC partner on a 15-estimate pilot. Once you see the quality of homeowner estimates and close your first system changeouts, we continue on a month-to-month agreement.</p>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>Do we have to sign a 6 or 12-month lock-in contract?</span>
+            <span class="faq-icon">&#43;</span>
+          </div>
+          <div class="faq-answer">
+            No. We believe in earning your business every single month. We start all contractors on the 15-Estimate Growth Pilot. Once you experience the lead quality and close your first system changeouts, we continue on a simple month-to-month agreement.
+          </div>
         </div>
-        <div class="faq-item">
-          <h4>How fast can our campaign go live?</h4>
-          <p>Once we confirm your service radius and verify territory exclusivity, our team builds your ads, targeting geofences, and dispatch alerts within 72 hours (3 business days).</p>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>How fast can our local ad engine go live?</span>
+            <span class="faq-icon">&#43;</span>
+          </div>
+          <div class="faq-answer">
+            Our standard deployment protocol takes exactly 72 hours (3 business days). On Day 1 we configure your territory and CRM; on Day 2 we build your custom branded creatives; on Day 3 we launch ads and test dispatch routing.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>What happens if another contractor in my city contacts you?</span>
+            <span class="faq-icon">&#43;</span>
+          </div>
+          <div class="faq-answer">
+            We enforce a strict one-contractor-per-territory policy. If a competitor reaches out to us from an area you have already claimed, we inform them that the territory is locked and place them on a waiting list.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>How does this integrate with our dispatch team?</span>
+            <span class="faq-icon">&#43;</span>
+          </div>
+          <div class="faq-answer">
+            We sync directly into your existing workflow. Inquiries can trigger instant SMS alerts to your on-call dispatcher, send structured email notifications, or push directly into ServiceTitan, Jobber, Housecall Pro, or FieldEdge via webhook.
+          </div>
         </div>
       </div>
     </div>
@@ -1417,6 +1546,10 @@
     updateCalc();
 
     let selectedSoftware = '';
+
+    function toggleFaq(el) {
+      el.classList.toggle('active');
+    }
 
     function selectCrm(crmName) {
       selectedSoftware = crmName;
