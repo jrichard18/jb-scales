@@ -204,14 +204,28 @@
     .badge-chip {
       background: var(--surface);
       border: 1px solid var(--border);
-      padding: 6px 14px;
-      border-radius: 6px;
+      padding: 8px 16px;
+      border-radius: 8px;
       font-size: 13px;
       font-weight: 600;
       color: #cbd5e1;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .badge-chip:hover {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: var(--blue);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.25);
+    }
+    .badge-chip:active {
+      transform: translateY(0);
     }
 
     /* Section Titles */
@@ -948,11 +962,11 @@
     <!-- Field CRM Integration Badges -->
     <div class="integration-strip">
       <span class="integration-label">Direct Dispatch Sync:</span>
-      <span class="badge-chip">&#9881; ServiceTitan</span>
-      <span class="badge-chip">&#9881; Jobber</span>
-      <span class="badge-chip">&#9881; Housecall Pro</span>
-      <span class="badge-chip">&#9881; FieldEdge</span>
-      <span class="badge-chip">&#9993; Direct SMS Dispatch</span>
+      <button onclick="selectCrm('ServiceTitan')" class="badge-chip">&#9881; ServiceTitan</button>
+      <button onclick="selectCrm('Jobber')" class="badge-chip">&#9881; Jobber</button>
+      <button onclick="selectCrm('Housecall Pro')" class="badge-chip">&#9881; Housecall Pro</button>
+      <button onclick="selectCrm('FieldEdge')" class="badge-chip">&#9881; FieldEdge</button>
+      <button onclick="selectCrm('Direct SMS')" class="badge-chip">&#9993; Direct SMS Dispatch</button>
     </div>
   </section>
 
@@ -1337,6 +1351,7 @@
       <button class="modal-close" onclick="closeModal()">&times;</button>
       <div class="modal-title">Claim Your Territory</div>
       <div class="modal-desc">Check if your service zip code is still open and reserve your 15-estimate pilot.</div>
+      <div id="crmNotice" style="display:none; background: rgba(59, 130, 246, 0.15); border: 1px solid var(--blue); color: var(--cyan); padding: 10px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; margin-bottom: 18px; text-align: center;"></div>
 
       <form onsubmit="handleIntake(event)">
         <div class="intake-group">
@@ -1401,12 +1416,36 @@
     ticketSlider.addEventListener('input', updateCalc);
     updateCalc();
 
+    let selectedSoftware = '';
+
+    function selectCrm(crmName) {
+      selectedSoftware = crmName;
+      openModal();
+      const modalTitle = document.querySelector('#intakeModal h3');
+      if (modalTitle) {
+        modalTitle.textContent = `Sync With ${crmName} & Claim Pilot`;
+      }
+      const note = document.getElementById('crmNotice');
+      if (note) {
+        note.textContent = `Selected Dispatch System: ${crmName} (100% Compatible)`;
+        note.style.display = 'block';
+      }
+    }
+
     function openModal() {
       document.getElementById('intakeModal').style.display = 'flex';
     }
 
     function closeModal() {
       document.getElementById('intakeModal').style.display = 'none';
+      const modalTitle = document.querySelector('#intakeModal h3');
+      if (modalTitle) {
+        modalTitle.textContent = 'Claim Your 15-Estimate Growth Pilot';
+      }
+      const note = document.getElementById('crmNotice');
+      if (note) {
+        note.style.display = 'none';
+      }
     }
 
     function handleIntake(e) {
@@ -1415,9 +1454,10 @@
       const terr = document.getElementById('mTerritory').value;
       const trucks = document.getElementById('mTrucks').value;
       const phone = document.getElementById('mPhone').value;
+      const crm = selectedSoftware || 'Not Specified';
 
-      const subject = encodeURIComponent(`Territory Pilot Application: ${comp} (${terr})`);
-      const body = encodeURIComponent(`Company: ${comp}\nTerritory / Zips: ${terr}\nTrucks: ${trucks}\nPhone: ${phone}\n\nRequesting territory availability and 15-estimate pilot details.`);
+      const subject = encodeURIComponent(`Territory Pilot Application: ${comp} (${terr}) [${crm}]`);
+      const body = encodeURIComponent(`Company: ${comp}\nTerritory / Zips: ${terr}\nTrucks: ${trucks}\nPhone: ${phone}\nDispatch CRM: ${crm}\n\nRequesting territory availability and 15-estimate pilot details.`);
       
       window.location.href = `mailto:josephksit@gmail.com?subject=${subject}&body=${body}`;
       closeModal();
