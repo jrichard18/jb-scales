@@ -1016,6 +1016,40 @@
       .comp-grid, .arch-grid, .calc-card, .shoulder-banner, .ad-preview-grid, .pilot-grid, .quality-grid, .timeline-grid, .speed-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
+
+    /* Hero v2: plain-English offer + single primary CTA */
+    .hero-actions { flex-wrap: wrap; margin-bottom: 18px; }
+    .btn-xl { font-size: 19px; padding: 18px 38px; box-shadow: 0 8px 30px rgba(59,130,246,0.35); }
+    .hero-sub-actions { color: #94a3b8; font-size: 14px; margin-bottom: 36px; }
+    .hero-sub-actions a { color: var(--cyan); text-decoration: none; font-weight: 600; margin: 0 6px; }
+    .offer-points { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 14px; margin: 0 auto 30px; max-width: 860px; }
+    .offer-point { background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 9px 16px; font-size: 14px; font-weight: 600; color: #e2e8f0; }
+    .offer-point b { color: var(--emerald); margin-right: 6px; }
+    .bd-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin: 34px 0; }
+    .bd-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px; }
+    .bd-num { width: 34px; height: 34px; border-radius: 50%; background: rgba(59,130,246,0.18); border: 1px solid var(--blue); color: var(--cyan); display: flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 14px; }
+    .bd-card h3 { font-size: 17px; color: #fff; margin-bottom: 8px; }
+    .bd-card p { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
+    .bd-cta { text-align: center; }
+    .bd-cta p { color: var(--text-muted); font-size: 14px; margin-top: 14px; }
+    .bd-cta p a { color: var(--cyan); font-weight: 600; text-decoration: none; }
+    .area-map { max-width: 760px; margin: 0 auto 10px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+    .area-map svg { width: 100%; height: auto; display: block; }
+    .sticky-cta { display: none; }
+    #bdMsg { display: none; margin-top: 12px; padding: 10px 14px; border-radius: 8px; font-size: 14px; font-weight: 600; text-align: center; }
+    #bdMsg.ok { display: block; background: rgba(16,185,129,0.15); border: 1px solid var(--emerald); color: #6ee7b7; }
+    #bdMsg.err { display: block; background: rgba(239,68,68,0.15); border: 1px solid #ef4444; color: #fca5a5; }
+    @media (max-width: 860px) {
+      .bd-grid { grid-template-columns: 1fr; }
+      .btn-xl { width: 100%; justify-content: center; font-size: 18px; padding: 17px 20px; }
+      .hero { padding: 44px 0 40px; }
+      .hero-lead { font-size: 17px; }
+      .sticky-cta { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 900; gap: 8px; padding: 10px 12px; background: rgba(8,12,22,0.96); border-top: 1px solid var(--border); }
+      .sticky-cta button, .sticky-cta a { flex: 1; text-align: center; justify-content: center; padding: 13px 8px; font-size: 15px; border-radius: 10px; font-weight: 700; text-decoration: none; cursor: pointer; }
+      .sticky-cta button { background: var(--blue); color: #fff; border: 0; flex: 2; }
+      .sticky-cta a { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+      footer { padding-bottom: 80px; }
+    }
   </style>
 </head>
 <body>
@@ -1059,26 +1093,31 @@
         <a href="agreement.html" class="nav-link" style="color: var(--cyan); font-weight: 600;">Client Agreement</a>
         <a href="https://calendly.com/josephksit/30min" target="_blank" rel="noopener" class="nav-link" style="font-weight: 600;">Book a Call</a>
       </div>
-      <button onclick="openModal()" class="nav-cta">Check Territory Availability</button>
+      <button onclick="openModal()" class="nav-cta">Get My Free Breakdown</button>
     </nav>
   </div>
 
   <section class="hero container">
     <div class="pill">
       <div class="pill-dot"></div>
-      1 Exclusive Partner Allowed Per Service Area
+      One HVAC Contractor Per Service Area
     </div>
-    <h1>Stop Buying Recycled Shared Leads.<br><span>Fill Your Tech Board Exclusively.</span></h1>
-    <p class="hero-lead">We deploy hyper-local Meta ad engines that deliver 100% exclusive homeowner AC replacement & repair estimates directly to your dispatch calendar—with zero competition from Angi or HomeAdvisor.</p>
-    
+    <h1>Exclusive Local HVAC Leads<br><span>From Facebook &amp; Instagram Ads.</span></h1>
+    <p class="hero-lead">We run Meta ads in your service area and send homeowners who want AC or heating work straight to your dispatcher. Every lead is yours alone, and we only work with <strong style="color:#fff">one contractor per area</strong>, so your competitor down the road cannot buy the same leads.</p>
+
+    <div class="offer-points">
+      <span class="offer-point"><b>&#10003;</b>Leads are yours only, never shared</span>
+      <span class="offer-point"><b>&#10003;</b>One contractor per service area</span>
+      <span class="offer-point"><b>&#10003;</b>Instant text alert to your dispatcher</span>
+    </div>
+
     <div class="hero-actions">
-      <button onclick="openModal()" class="btn-lg">
-        Claim 15-Estimate Pilot
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <button onclick="openModal()" class="btn-lg btn-xl">
+        Get My 2-Minute Service Area Growth Breakdown
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
-      <a href="#calculator" class="btn-outline">Calculate Revenue Potential</a>
-      <a href="https://calendly.com/josephksit/30min" target="_blank" rel="noopener" class="btn-outline">Book a Call</a>
     </div>
+    <p class="hero-sub-actions">Free. Takes 2 minutes. Or <a href="https://calendly.com/josephksit/30min" target="_blank" rel="noopener">book a 30-minute call</a> &middot; <a href="#calculator">see the revenue calculator</a></p>
 
     <!-- Field CRM Integration Badges -->
     <div class="integration-strip">
@@ -1088,6 +1127,45 @@
       <button onclick="selectCrm('Housecall Pro')" class="badge-chip">&#9881; Housecall Pro</button>
       <button onclick="selectCrm('FieldEdge')" class="badge-chip">&#9881; FieldEdge</button>
       <button onclick="selectCrm('Direct SMS')" class="badge-chip">&#9993; Direct SMS Dispatch</button>
+    </div>
+  </section>
+
+  <!-- 2-Minute Service Area Growth Breakdown -->
+  <section class="section-wrap" id="breakdown">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Start Here</div>
+        <h2 class="section-title">The 2-Minute Service Area Growth Breakdown</h2>
+        <p class="section-desc">Tell us your company and the zip codes you serve. We check whether your area is still open, then send you a plain-English plan for how ads would fill your schedule there. No cost, no obligation.</p>
+      </div>
+
+      <div class="area-map" aria-label="One contractor per service area">
+        <svg viewBox="0 0 760 180" role="img" aria-label="Diagram: your service area is reserved for you, neighboring areas go to other contractors">
+          <rect x="0" y="0" width="760" height="180" rx="10" fill="#0b1220"/>
+          <g stroke="#334155" stroke-width="2" fill="#111a2e">
+            <rect x="20" y="20" width="200" height="140" rx="10"/>
+            <rect x="540" y="20" width="200" height="140" rx="10"/>
+          </g>
+          <rect x="240" y="20" width="280" height="140" rx="10" fill="rgba(59,130,246,0.18)" stroke="#06b6d4" stroke-width="3"/>
+          <text x="380" y="68" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="22" font-weight="700">YOUR SERVICE AREA</text>
+          <text x="380" y="98" text-anchor="middle" fill="#67e8f9" font-family="sans-serif" font-size="16">Only your company gets these leads</text>
+          <text x="380" y="130" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="14">1 contractor per area</text>
+          <text x="120" y="95" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="15">Another area</text>
+          <text x="640" y="95" text-anchor="middle" fill="#64748b" font-family="sans-serif" font-size="15">Another area</text>
+        </svg>
+      </div>
+
+      <div class="bd-grid">
+        <div class="bd-card"><div class="bd-num">1</div><h3>We check your area</h3><p>Is your zip code or county still open? If someone else already holds it, we tell you straight.</p></div>
+        <div class="bd-card"><div class="bd-num">2</div><h3>We match the offers</h3><p>Tune-ups, repairs, or replacements: the seasonal offers that fit what your crew wants more of.</p></div>
+        <div class="bd-card"><div class="bd-num">3</div><h3>We map the lead flow</h3><p>How a homeowner goes from seeing your ad to a text on your dispatcher&rsquo;s phone.</p></div>
+        <div class="bd-card"><div class="bd-num">4</div><h3>You decide</h3><p>You get the plan and a suggested ad budget. If it makes sense, we start. If not, you keep the plan.</p></div>
+      </div>
+
+      <div class="bd-cta">
+        <button onclick="openModal()" class="btn-lg btn-xl">Get My Free Breakdown</button>
+        <p>Rather talk it through? <a href="https://calendly.com/josephksit/30min" target="_blank" rel="noopener">Book a 30-minute call</a></p>
+      </div>
     </div>
   </section>
 
@@ -1547,11 +1625,15 @@
   <div class="modal-backdrop" id="intakeModal" onclick="if(event.target === this) closeModal()">
     <div class="modal-box">
       <button class="modal-close" onclick="closeModal()">&times;</button>
-      <div class="modal-title">Claim Your Territory</div>
-      <div class="modal-desc">Check if your service zip code is still open and reserve your 15-estimate pilot.</div>
+      <div class="modal-title">Get Your 2-Minute Service Area Growth Breakdown</div>
+      <div class="modal-desc">Tell us who you are and where you work. We check if your area is open and send your breakdown. Free.</div>
       <div id="crmNotice" style="display:none; background: rgba(59, 130, 246, 0.15); border: 1px solid var(--blue); color: var(--cyan); padding: 10px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; margin-bottom: 18px; text-align: center;"></div>
 
-      <form onsubmit="handleIntake(event)">
+      <form id="bdForm" onsubmit="handleIntake(event)">
+        <div class="intake-group">
+          <label>Your Name</label>
+          <input type="text" id="mName" class="intake-input" placeholder="First and last name" required>
+        </div>
         <div class="intake-group">
           <label>Company Name</label>
           <input type="text" id="mCompany" class="intake-input" placeholder="e.g. Apex Heating & Air" required>
@@ -1574,11 +1656,22 @@
           <input type="tel" id="mPhone" class="intake-input" placeholder="(317) 000-0000" required>
         </div>
 
-        <button type="submit" class="btn-lg" style="width: 100%; justify-content: center; margin-top: 10px;">
-          Submit Territory Application
+        <div class="intake-group">
+          <label>Email (optional)</label>
+          <input type="email" id="mEmail" class="intake-input" placeholder="you@yourcompany.com">
+        </div>
+        <button type="submit" id="bdGo" class="btn-lg" style="width: 100%; justify-content: center; margin-top: 10px;">
+          Send Me My Breakdown
         </button>
+        <div id="bdMsg"></div>
+        <p style="text-align:center;font-size:13px;color:#94a3b8;margin-top:12px;">Or <a href="https://calendly.com/josephksit/30min" target="_blank" rel="noopener" style="color:var(--cyan);font-weight:600;text-decoration:none;">book a 30-minute call</a></p>
       </form>
     </div>
+  </div>
+
+  <div class="sticky-cta">
+    <button onclick="openModal()">Get My Free Breakdown</button>
+    <a href="https://calendly.com/josephksit/30min" target="_blank" rel="noopener">Book a Call</a>
   </div>
 
   <footer>
@@ -1675,17 +1768,35 @@
 
     function handleIntake(e) {
       e.preventDefault();
-      const comp = document.getElementById('mCompany').value;
-      const terr = document.getElementById('mTerritory').value;
-      const trucks = document.getElementById('mTrucks').value;
-      const phone = document.getElementById('mPhone').value;
-      const crm = selectedSoftware || 'Not Specified';
-
-      const subject = encodeURIComponent(`Territory Pilot Application: ${comp} (${terr}) [${crm}]`);
-      const body = encodeURIComponent(`Company: ${comp}\nTerritory / Zips: ${terr}\nTrucks: ${trucks}\nPhone: ${phone}\nDispatch CRM: ${crm}\n\nRequesting territory availability and 15-estimate pilot details.`);
-      
-      window.location.href = `mailto:josephksit@gmail.com?subject=${subject}&body=${body}`;
-      closeModal();
+      const v = id => (document.getElementById(id) || {value: ''}).value.trim();
+      const data = {
+        name: v('mName'), company: v('mCompany'), territory: v('mTerritory'), trucks: v('mTrucks'),
+        phone: v('mPhone'), email: v('mEmail'), dispatch_software: selectedSoftware || 'Not specified',
+        source_page: 'jb-scales home page'
+      };
+      const msg = document.getElementById('bdMsg');
+      const btn = document.getElementById('bdGo');
+      btn.disabled = true; btn.textContent = 'Sending...';
+      const fd = new FormData();
+      fd.append('_subject', 'NEW 2-MIN BREAKDOWN REQUEST - JB SCALES');
+      fd.append('_template', 'table');
+      fd.append('_captcha', 'false');
+      if (data.email) fd.append('_replyto', data.email);
+      Object.keys(data).forEach(k => fd.append(k, data[k]));
+      fetch('https://formsubmit.co/ajax/josephksit@gmail.com', {method: 'POST', headers: {'Accept': 'application/json'}, body: fd})
+        .then(r => r.json())
+        .then(d => {
+          if (d.success === 'true' || d.success === true) {
+            msg.className = 'ok';
+            msg.textContent = 'Got it. We will check your area and reach out shortly.';
+            btn.textContent = 'Sent';
+          } else { throw new Error('fail'); }
+        })
+        .catch(() => {
+          btn.disabled = false; btn.textContent = 'Send Me My Breakdown';
+          msg.className = 'err';
+          msg.textContent = 'That did not go through. Tap the Book a call link below, or email josephksit@gmail.com.';
+        });
     }
   </script>
 </body>
