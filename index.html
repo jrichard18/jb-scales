@@ -1295,7 +1295,7 @@
             </li>
             <li class="speed-step-item">
               <span class="speed-time-badge">60s</span>
-              <p style="font-size: 14px; color: var(--text-muted);"><strong style="color: #fff;">Live Calendar Booking:</strong> Lead is logged directly into ServiceTitan, Jobber, Housecall Pro, or your dispatch board ready to run.</p>
+              <p style="font-size: 14px; color: var(--text-muted);"><strong style="color: #fff;">Live Calendar Booking:</strong> The booked estimate goes to your dispatcher by text or email so it can go on the board. We confirm how it reaches your ServiceTitan, Jobber, Housecall Pro or FieldEdge setup on your call.</p>
             </li>
           </ul>
         </div>
@@ -1715,7 +1715,7 @@
       openModal();
       const modalTitle = document.querySelector('#intakeModal .modal-title');
       if (modalTitle) {
-        modalTitle.textContent = crmName === 'Direct SMS' ? 'Get Leads Texted Straight to Your Dispatcher' : `Get Leads Into ${crmName}: Your 2-Minute Breakdown`;
+        modalTitle.textContent = crmName === 'Direct SMS' ? 'Get Leads Texted Straight to Your Dispatcher' : `Using ${crmName}? Get Your 2-Minute Breakdown`;
       }
       const note = document.getElementById('crmNotice');
       if (note) {
